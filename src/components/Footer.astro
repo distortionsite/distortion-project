@@ -37,8 +37,8 @@
         </ul>
     </div>
     <div class="column two">
-        <ul>
-            <li>
+        <ul class="listb">
+            <li >
                 <a href="https://www.cphdistortion.dk/art-atmosphere/">Open Call Art & Atmosphere</a>
             </li>
             <li>
@@ -66,6 +66,7 @@ footer {
 .wrapper {
     display: flex;
     justify-content: space-between;
+      margin-top: 30px;
 }
 
 .ikoner, .knapper {
@@ -75,6 +76,11 @@ footer {
     display: flex;
     /* flex-direction: column; */
     gap: 10px;
+   
+}
+.footer-icons img {
+  margin-bottom: 10px;
+     margin-left: 25px;
 }
 .container {
     display: flex;
@@ -105,10 +111,15 @@ ul {
     padding: 5px 5px;
     margin: 5px 5px;
 }
+/* .listb{
+    margin-left: 10px;
+} */
+ 
 @media (max-width: 628px) {
   .wrapper {
     flex-direction: row; /* Stack the logo and icons vertically for smaller screens */
     align-items: center; /* Center align the content */
+            margin-top: 30px;
   }
 
   .logo img {
@@ -120,6 +131,8 @@ ul {
     width: 30px; /* Reduce the size of the icons */
     height: auto;
     gap: 10px;
+     margin-bottom: 10px;
+     margin-left: 25px;
   }
 
   .knapper img {
@@ -134,12 +147,18 @@ ul {
 
   .column {
     width: 100%; /* Make the columns take full width on small screens */
+    margin-bottom: -17px;
   }
 
   .column a {
     font-size: 14px; /* Reduce the font size of links */
     margin-bottom: 5px; /* Reduce space between links */
   }
+  ul .listb{
+    margin-top: -10px;
+
+  }
+  
 }
 
 

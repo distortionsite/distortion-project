@@ -1,0 +1,209 @@
+<div class="ticket-section">
+    <img src="images/countdown.png" alt="countdown"  class="center-img spaced-img">
+    <h2 class="ticketheading">Get Your Tickets Now</h2>
+   <div class="blindfestival">
+    <div>
+        <p>2025 Blind Bird Festival Pas</p>
+    <button>750kr</button>
+    </div>
+    <div  >
+        <p>2025 Blind Bird Ø Weekend Ticket</p>
+        <button class="price">950kr</button>
+    </div>
+    </div>
+</div>
+
+<style>
+    body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.ticket-section{
+     background-color: rgba(69, 185, 255, 1);
+     width:100%;
+     height: 700px;
+
+}
+ .center-img {
+    display: block; /* Required to use margin:auto on an inline element */
+    margin-left: auto;
+    margin-right: auto;
+  width: 827.48px;
+height: 218.938px;
+
+  }
+    .spaced-img {
+    margin-top: 8rem;  /* Space above the image */
+    margin-bottom: 2.5rem; /* Space below the image */
+        padding: 30px 30px 30px 20px;
+  }
+
+  
+
+.ticketheading{
+    color: #2D2240;
+font-family: "Konkhmer Sleokchher";
+font-size: 80px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    text-align: center;
+}
+.blindfestival {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Adjust the gap between the text and button */
+    margin-bottom: 15px; /* Adds space between each .blindfestival div */
+    margin-left: 17rem;
+    margin-top: 2rem;
+}
+p{
+    color: #000;
+font-family: "Konkhmer Sleokchher";
+font-size: 30px;
+font-style:normal ;
+font-weight: 700;
+line-height: normal;
+}
+
+button {
+    border-radius: 32px;
+    padding: 10px 20px;  
+    border: none;        /* Removes default border */
+    background-color: rgba(253, 226, 205, 1); /* Button background color */
+    color: #000;      /* Button text color */
+    cursor: pointer;  /* Changes cursor to pointer on hover */
+    width: 150px;
+    height: 50px;
+    flex-shrink: 0; 
+    margin-top:0.2rem;
+  margin-left: 4rem;  
+  font-weight: 700;
+}
+
+button:hover {
+    background-color:rgb(208, 107, 29); 
+}
+.price{
+    margin-right: 20px;
+}
+
+
+
+    /* For devices with max-width of 1200px (e.g., smaller laptops, tablets in landscape mode) */
+@media (max-width: 1200px) {
+    .ticket-section {
+        height: auto; /* Allow dynamic height */
+        padding: 20px; /* Add padding to prevent content from hitting screen edges */
+    }
+    .center-img {
+        width: 90%; /* Make image a bit smaller than full width */
+        max-width: 800px; /* Limit the max width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image */
+    }
+    .ticketheading {
+        font-size: 60px; /* Smaller heading for medium screens */
+        padding-top: 20px; /* Add padding for visual balance */
+    }
+    .blindfestival {
+        grid-template-columns: 1fr 1fr; /* Two columns for this size */
+        margin-left: 5rem; /* Reduce side margins */
+        margin-right: 5rem; /* Add right margin to balance */
+    }
+    p {
+        font-size: 25px; /* Adjust text size for smaller screens */
+        text-align: center; /* Center-align text */
+    }
+    button {
+        width: 130px; /* Adjust button width */
+        height: 45px; /* Adjust button height */
+        margin: 0 auto; /* Center the buttons */
+        display: block; /* Ensure block display for centering */
+    }
+}
+
+   
+
+
+/* For devices with max-width of 800px (e.g., tablets in portrait mode, large phones) */
+@media (max-width: 800px) {
+    .ticket-section {
+        padding: 10px;
+        height: auto;
+        width: 100%; /* Ensure the section takes full width */
+    }
+    .center-img {
+        width: 90%; /* Ensure the image scales properly */
+        max-width: 100%; /* Prevent overflow */
+        height: auto;
+        margin: 0 auto; /* Center the image */
+    }
+    .ticketheading {
+        font-size: 50px; /* Smaller heading for medium screens */
+    }
+ .blindfestival {
+        grid-template-columns: 1fr; /* Stack the items in one column */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 1rem;
+        gap: 10px; /* Smaller gap between items */
+        width: 100%; /* Ensure it fits within the container */
+    }
+    p {
+        font-size: 22px; /* Adjust text size for smaller screens */
+        text-align: center; /* Center-align the text */
+    }
+    button {
+        width: 100%; /* Make the button fill the container */
+        height: 45px; /* Adjust button height */
+        margin: 0 auto; /* Center the button */
+        padding: 10px; /* Adjust padding to fit smaller screens */
+        display: block;
+    }}
+
+    
+    
+
+
+
+/* For devices with max-width of 500px (e.g., smartphones) */
+@media (max-width: 500px) {
+    .ticket-section {
+        padding: 10px;
+        height: auto;
+    }
+    .center-img {
+        width: 80%; /* Make the image smaller */
+        height: auto;
+    }
+    .ticketheading {
+        font-size: 40px; /* Adjust heading size for small screens */
+    }
+    .blindfestival {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        gap: 10px; /* Smaller gap between items */
+        margin-left: 0; /* Remove left margin */
+    }
+    p {
+        font-size: 20px; /* Adjust text size */
+    }
+    button {
+        width: 100px; /* Smaller buttons */
+        height: 35px;
+        margin-left: 0;
+           margin: 0 auto; /* Center the button */
+    }
+    .price{
+    margin-left: 163px;
+}
+
+}
+
+
+
+
+
+
+</style>
