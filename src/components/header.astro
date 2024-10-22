@@ -1,0 +1,189 @@
+<header>
+  <div class="logo">
+    <a href="index.html"> <img src="img/header-logo.png" alt="logo" /></a>
+  </div>
+  <div class="ticket-icon">
+    <a href="index.html"> <img src="img/ticket-icon.png" alt="ticket" /></a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li><a href="aboutme.html">Homepage</a></li>
+      <li><a href="work.html">Line-up</a></li>
+      <li><a href="work.html">Tickets</a></li>
+      <li><a href="work.html">Map</a></li>
+      <li><a href="work.html">Survay</a></li>
+      <li><a href="work.html">Schedule</a></li>
+      <li><a href="work.html">Lost and found</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* Global Styles */
+  img {
+    width: 100%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #fde2cd;
+    /* Replaced var(--blue) */
+  }
+
+  .logo img {
+    width: 100px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .ticket-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .ticket-icon img {
+    width: 60px;
+    height: 35px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-right: 20px;
+    font-family: "Oswald", sans-serif;
+    /* Replaced var(--oswald) */
+    font-weight: 100;
+    font-style: normal;
+    font-size: large;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px;
+    color: #000000;
+    /* Replaced var(--hvid) */
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: end;
+    font-family: "Oswald", sans-serif;
+  }
+
+  .menu a:hover {
+    color: #ffffff;
+    /* Replaced var(--hvid) */
+  }
+
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    /* Replaced var(--hvid) */
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .menu li:last-child a:hover {
+    color: #ff9900;
+    /* Replaced var(--gul) */
+  }
+
+  /* Mobile styles */
+  @media screen and (max-width: 8000px) {
+    .menu {
+      display: none;
+    }
+
+    .burger {
+      display: block;
+    }
+
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    nav.active .menu {
+      display: block;
+      background-color: #fde2cd;
+      /* Replaced var(--blue) */
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+
+    nav.active .menu a {
+      font-size: 24px;
+    }
+
+    .logo img {
+      width: 80%;
+      height: 80px;
+    }
+  }
+</style>
+<script>
+  // JavaScript for burger menu toggle
+  document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector("nav");
+
+    // Event listener for burger icon click
+    burger.addEventListener("click", function () {
+      // Toggle 'active' class on burger icon
+      burger.classList.toggle("active");
+      // Toggle 'active' class on nav
+      nav.classList.toggle("active");
+    });
+  });
+</script>
