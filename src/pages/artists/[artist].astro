@@ -1,0 +1,21 @@
+---
+export async function getStaticPaths() {
+const url ="https://jrjsifarwxtrqahwmumf.supabase.co/rest/v1/artists";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyanNpZmFyd3h0cnFhaHdtdW1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzY5ODgsImV4cCI6MjA0NDIxMjk4OH0.sG07WdJgdkAQJVMgD4MAkeVJZDpztna35cNHTbFObyw"
+  const artists = await fetch(url, {
+      headers: {
+        apikey: key,
+      },
+    }).then(res=>res.json())
+  
+  return artists.map(artist => ({
+      params: { artist: artist.slug }, // [artist]=artist.slug
+      props: { artist } // send al data med som props
+    }))
+}
+
+const { artist } = Astro.props;
+console.log(artist) // artist.name, artist.image osv.
+---
+<h1>{artist.name}</h1>
+
