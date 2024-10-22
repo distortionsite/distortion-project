@@ -1,0 +1,243 @@
+<div class="lineup-section">
+    <h2 class="lineup-heading">Line-Up</h2>
+    <div class="carousel-container">
+        <button class="carousel-btn left-btn">
+            <img src="images/left.svg" alt="left Arrow">
+        </button>
+        <div class="carousel">
+            <div class="card">
+                <img src="images/anafisa.webp" alt="Image 1">
+            </div>
+            <div class="card">
+                <img src="images/annalexic.webp" alt="Image 2">
+            </div>
+            <div class="card">
+                <img src="images/ash.webp" alt="Image 3">
+            </div>
+            <div class="card">
+                <img src="images/charris.webp" alt="Image 4">
+            </div>
+            <div class="card">
+                <img src="images/dana.webp" alt="Image 5">
+            </div>
+            <div class="card">
+                <img src="images/ditte.webp" alt="Image 6">
+            </div>
+        </div>
+        <button class="carousel-btn right-btn">
+            <img src="images/right.svg" alt="Right Arrow">
+        </button>
+    </div>
+    <button class="middle-btn">Full line-up</button>
+</div>
+
+<style>
+body,html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lineup-section {
+    text-align: center;
+    margin: 1%;
+    background-color: rgba(253, 62, 46, 1);
+    width: 100%; /***her there was no width before, i have added to remove white space */
+    height: auto;
+}
+
+.lineup-heading {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: "Konkhmer Sleokchher";
+    margin-left: 10px;
+    padding-top: 32px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;   
+    height: 481px;
+}
+/***width:1515px */
+
+.card {
+    flex: 0 0 25%;
+    text-align: center;
+    padding: 15px;
+    margin: 0 30px;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.middle-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 40px;
+    color: #000;
+    background-color: rgba(253, 226, 205, 1);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Konkhmer Sleokchher";
+    margin-bottom: 10px;
+    width: 349px;
+    height: 94px;
+}
+
+.middle-btn:hover {
+    background-color: rgb(208, 107, 29);
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .carousel {
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        flex: 0 0 33%;
+    }
+
+    .lineup-heading {
+        font-size: 2.5rem;
+    }
+
+    .middle-btn {
+        font-size: 30px;
+        width: 280px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 800px) {
+    .card {
+        flex: 0 0 50%;
+    }
+
+    .lineup-heading {
+        font-size: 2rem;
+    }
+
+    .middle-btn {
+        font-size: 24px;
+        width: 250px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        flex: 0 0 100%;
+    }
+
+    .lineup-heading {
+        font-size: 1.5rem;
+        padding-top: 20px;
+    }
+
+    .middle-btn {
+        font-size: 20px;
+        width: 200px;
+        height: 60px;
+    }
+}
+</style>
+
+<script>
+const leftBtn = document.querySelector(".left-btn");
+const rightBtn = document.querySelector(".right-btn");
+const carousel = document.querySelector(".carousel");
+
+leftBtn.addEventListener("click", () => {
+  carousel.scrollBy({
+    left: -360,
+    behavior: "smooth",
+  });
+});
+
+rightBtn.addEventListener("click", () => {
+  carousel.scrollBy({
+    left: 360,
+    behavior: "smooth",
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+const leftBtn = document.querySelector(".left-btn");
+const rightBtn = document.querySelector(".right-btn");
+const carousel = document.querySelector(".carousel");
+
+let scrollPosition = 0;
+
+leftBtn.addEventListener("click", () => {
+    console.log("left")
+  scrollPosition -= 360;
+  carousel.scrollBy({
+    left: -360,
+    behavior: "smooth",
+  });
+});
+
+rightBtn.addEventListener("click", () => {
+console.log("right")
+  scrollPosition += 360;
+  carousel.scrollBy({
+    left: 360,
+    behavior: "smooth",
+  });
+});
+</script> -->
+ 
+ 
