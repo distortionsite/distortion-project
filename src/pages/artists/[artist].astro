@@ -1,4 +1,6 @@
 ---
+// @ts-nocheck
+import MainLayout from '../../layouts/MainLayout.astro';
 export async function getStaticPaths() {
 const url ="https://jrjsifarwxtrqahwmumf.supabase.co/rest/v1/artists";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyanNpZmFyd3h0cnFhaHdtdW1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzY5ODgsImV4cCI6MjA0NDIxMjk4OH0.sG07WdJgdkAQJVMgD4MAkeVJZDpztna35cNHTbFObyw"
@@ -15,7 +17,90 @@ const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZi
 }
 
 const { artist } = Astro.props;
-console.log(artist) // artist.name, artist.image osv.
+//console.log(artist) // artist.name, artist.image osv.
+
 ---
-<h1>{artist.name}</h1>
+
+<MainLayout>
+<div class="single-artist">
+<h1>{artist.artistname}</h1>
+<img src={"../../images/"+artist.image}/>
+<p>{artist.content}</p>
+<img id="spotify-image" src={"../../images/"+artist.imagespotify}/>
+</div>
+</MainLayout>
+
+
+<style>
+    .single-artist{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4rem;
+
+    }
+    h1{
+        color: #000;
+font-family: "Konkhmer Sleokchher";
+font-size: 5rem;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+    }
+    p{
+      
+        color: #2D2240;
+font-family: "Konkhmer Sleokchher";
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 400;
+line-height: 2rem;
+    }
+    img{
+        max-width: 550px;
+        height: 100%;
+    }
+    /* This only applies to the image with the id "spotify-image" */
+#spotify-image {
+    max-width: 600px; /* Custom size for the spotify image */
+    height: 100%; /* Set height to auto for proportional scaling */
+    border-radius: 10px; /* Make it a circle, for example */
+      margin-top: 3rem;
+        margin-bottom: 1rem;
+}
+ /* Optional: Use transform to increase the overall size (scaling) */
+    transform: scale(1.2); /* Scales the image by 20% */
+    transition: transform 0.3s ease-in-out; /* Smooth transition on resize */
+
+    @media (min-width: 1200px) {
+    #spotify-image {
+        width: 1100px; /* Increase width for larger screens */
+        transform: scale(1.5); /* Scale the image by 50% for larger screens */
+    }
+}
+
+    @media (min-width: 800px) {
+
+img{
+        width: 700px;
+        height: auto;
+    }
+        .single-artist{
+            margin: 10rem;
+        }
+       #spotify-image {
+        width: 900px; /* Set the width to 900px for larger screens */
+        height: auto;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+
+    }
+
+
+
+
+
+</style>
 
