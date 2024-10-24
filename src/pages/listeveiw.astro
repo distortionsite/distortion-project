@@ -1,9 +1,113 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
-import Listeveiwindhold from "../components'Listeveiwindhold.astro";
+const response = await fetch(`https://jrjsifarwxtrqahwmumf.supabase.co/rest/v1/artists`, {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyanNpZmFyd3h0cnFhaHdtdW1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzY5ODgsImV4cCI6MjA0NDIxMjk4OH0.sG07WdJgdkAQJVMgD4MAkeVJZDpztna35cNHTbFObyw",
+  },
+});
+const artists = await response.json();
 ---
 
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe5d9;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 730px;
+    /* This will ensure that only 3 cards fit per row (3 * 200px + margins) */
+    margin: 0 auto;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    width: 200px;
+    height: 280px;
+    /* Fixed height */
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #45b9ff;
+    /* Default color, can be overridden */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* Use flexbox */
+    flex-direction: column;
+    /* Stack children vertically */
+    justify-content: flex-start;
+    /* Align items at the start */
+    align-items: center;
+    /* Center content horizontally */
+  }
+
+  .card img {
+    width: 100%;
+    height: 80px;
+    /* Fixed height for the image */
+    object-fit: cover;
+    /* Cover the area without distortion */
+  }
+
+  .title,
+  .date {
+    display: flex;
+    /* Use flexbox for text */
+    justify-content: center;
+    /* Center text horizontally */
+    align-items: center;
+    /* Center text vertically */
+    width: 100%;
+    /* Full width for alignment */
+    padding: 10px 0;
+    /* Vertical padding */
+  }
+
+  .card .title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .card .date {
+    font-size: 30px;
+    color: #666;
+  }
+
+  .card2 {
+    background-color: #fd3e2e;
+    /* Override color for card2 */
+  }
+
+  .card3 {
+    background-color: #ff9330;
+    /* Override color for card3 */
+  }
+</style>
+
+<!-- hvordan sætter jeg indviduelle billeder på istedet for gentagne billeder  -->
+
 <MainLayout>
-  <Button />
+  <h1>Se this year line up line up</h1>
+  <div class="container">
+    {
+      artists.map((artist, i) => (
+        // en komponent i et React-projekt genererer en CSS-klasse for et element (i dette tilfælde et div). Klassen varierer baseret på en værdi af i, hvor (i % 3) + 1 sikrer, at klassen skifter mellem "card1", "card2", og "card3" for hver 3. element.s
+        <div class={`card${(i % 3) + 1}`}>
+          <img src={"../images/" + artist.image} alt="profilbillede" />
+          <div class="title">{artist.artistname}</div>
+          <div class="date">1 June 2024</div>
+        </div>
+      ))
+    }
+  </div>
 </MainLayout>

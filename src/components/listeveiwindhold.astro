@@ -102,7 +102,7 @@ const artists = await response.json();
       artists.map((artist, i) => (
         // en komponent i et React-projekt genererer en CSS-klasse for et element (i dette tilfælde et div). Klassen varierer baseret på en værdi af i, hvor (i % 3) + 1 sikrer, at klassen skifter mellem "card1", "card2", og "card3" for hver 3. element.s
         <div class={`card${(i % 3) + 1}`}>
-          <img src="../images/burger.png" alt="Anfisa Letyago" />
+          <img src={"../images/" + {artist.image}} alt="Anfisa Letyago" />
           <div class="title">{artist.artistname}</div>
           <div class="date">1 June 2024</div>
         </div>
