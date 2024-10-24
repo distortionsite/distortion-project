@@ -9,12 +9,6 @@ const options = {
       },
     }
 
-const artists = await fetch(url, options).then(res=>res.json())
+const artists = await fetch(url, options).then(res=>res.json());
+//console.log(artists);
 ---
-<ul>
-  {
-    artists.map((artist) => (
-      <Card artist={artist} />
-    ))
-  }
-</ul>
