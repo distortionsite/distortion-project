@@ -1,0 +1,152 @@
+<style>
+  .container {
+    width: 100%;
+    height: 100%;
+    background-color: #f28d1a;
+  }
+
+  .day {
+    background-color: #f28d1a;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    /* Black lines between days */
+  }
+
+  .day:hover {
+    background-color: #e07600;
+  }
+
+  .content {
+    display: none;
+    padding: 20px;
+    background-color: #e07600;
+    font-size: 16px;
+    color: #000;
+    padding: 20px;
+  }
+
+  .plus {
+    font-size: 24px;
+    color: #000;
+  }
+
+  /* Grid layout for event rows */
+  .event-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 10px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="day">
+      Wednesday 29 May 2024
+      <span class="plus">+</span>
+    </div>
+    <div class="content">
+      <div class="event-row">
+        <span>ActionHygge (free)</span>
+        <span>16.00-21.00</span>
+      </div>
+      <div class="event-row">
+        <span>Distortion X Rådhuspladsen</span>
+        <span>16.00-00.00</span>
+      </div>
+      <div class="event-row">
+        <span>Distortion Club</span>
+        <span>22.00-04.00</span>
+      </div>
+    </div>
+
+    <div class="day">
+      Thursday 30 May 2024
+      <span class="plus">+</span>
+    </div>
+    <div class="content">
+      <div class="event-row">
+        <span>ActionHygge (free)</span>
+        <span>16.00-22.00</span>
+      </div>
+      <div class="event-row">
+        <span>Nørrebro Street Party (free)</span>
+        <span>16.00-22.00</span>
+      </div>
+      <div class="event-row">
+        <span>Distortion X Nørrebro</span>
+        <span>16.00-23.00</span>
+      </div>
+      <div class="event-row">
+        <span>Distortion Club</span>
+        <span>22.00-04.00</span>
+      </div>
+    </div>
+
+    <div class="day">
+      Friday 31 May 2024
+      <span class="plus">+</span>
+    </div>
+    <div class="content">
+      <div class="event-row">
+        <span>ActionHygge (free)</span>
+        <span>15.00-21.00</span>
+      </div>
+      <div class="event-row">
+        <span>Havnefest (free)</span>
+        <span>15.00-21.00</span>
+      </div>
+      <div class="event-row">
+        <span>Distortion Ø</span>
+        <span>18.00-04.00</span>
+      </div>
+      <div class="event-row">
+        <span>Distortion Club</span>
+        <span>22.00-04.00</span>
+      </div>
+    </div>
+
+    <div class="day">
+      Saturday 1 June 2024
+      <span class="plus">+</span>
+    </div>
+    <div class="content">
+      <div class="event-row">
+        <span>Distortion Ø</span>
+        <span>18.00-06.00</span>
+      </div>
+    </div>
+
+    <div class="day">
+      Sunday 2 June 2024
+      <span class="plus">+</span>
+    </div>
+    <div class="content">
+      <div class="event-row">
+        <span>Afterparty (free)</span>
+        <span>06.00-12.00</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const days = document.querySelectorAll(".day");
+    days.forEach((day) => {
+      day.addEventListener("click", function () {
+        const content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          this.querySelector(".plus").textContent = "+";
+        } else {
+          content.style.display = "block";
+          this.querySelector(".plus").textContent = "-";
+        }
+      });
+    });
+  </script>
+</body>
